@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live JSON API</title>
+  <meta http-equiv="refresh" content="300"> <!-- Refresh every 5 minutes -->
+</head>
+<body>
+  <script>
+    // Generate dynamic JSON data
+    const data = {
+      timestamp: new Date().toISOString(),
+      environment: {
+        temperature: (20 + Math.random() * 10).toFixed(1), // °C
+        humidity: (40 + Math.random() * 30).toFixed(1)     // %
+      },
+      systemStatus: {
+        server: "Online",
+        uptimeMinutes: Math.floor(Math.random() * 10000),
+        errorRate: (Math.random() * 0.5).toFixed(2)        // %
+      },
+      sales: [
+        {
+          region: "North",
+          total: Math.floor(Math.random() * 10000),
+          products: {
+            A: Math.floor(Math.random() * 3000),
+            B: Math.floor(Math.random() * 3000),
+            C: Math.floor(Math.random() * 3000)
+          }
+        },
+        {
+          region: "South",
+          total: Math.floor(Math.random() * 10000),
+          products: {
+            A: Math.floor(Math.random() * 3000),
+            B: Math.floor(Math.random() * 3000),
+            C: Math.floor(Math.random() * 3000)
+          }
+        },
+        {
+          region: "East",
+          total: Math.floor(Math.random() * 10000),
+          products: {
+            A: Math.floor(Math.random() * 3000),
+            B: Math.floor(Math.random() * 3000),
+            C: Math.floor(Math.random() * 3000)
+          }
+        },
+        {
+          region: "West",
+          total: Math.floor(Math.random() * 10000),
+          products: {
+            A: Math.floor(Math.random() * 3000),
+            B: Math.floor(Math.random() * 3000),
+            C: Math.floor(Math.random() * 3000)
+          }
+        }
+      ]
+    };
+
+    // Display as JSON
+    document.body.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+  </script>
+</body>
+</html>
